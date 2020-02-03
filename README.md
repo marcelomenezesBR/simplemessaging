@@ -4,6 +4,7 @@ Simple messaging application, REST API (Spring Boot) to send and receive a messa
 ## Requirements
 * Kafka cluster and a topic exclusive to the application
 * MySQL server with the following table created:
+
 ```create table messages(id int unsigned auto_increment not null,message varchar(32000) not null,date_created timestamp default now(), primary key (id));```
 * JRE 1.8
 * Apache Maven to build
@@ -16,13 +17,16 @@ Simple messaging application, REST API (Spring Boot) to send and receive a messa
     * Kafka server and topic
     * MySQL host, database, user and password
 4. Start application
+
     $ java -jar target\simplemessaging-0.0.1-SNAPSHOT.jar
 
 ## Test
 Send message (in a msg.json file)
+
 $ curl -X PUT http://localhost:8080/message -d @msg.json -H "Content-Type: application/json"
 
 Read message
+
 $ curl -X GET http://localhost:8080/message
 
 ## Sample file
