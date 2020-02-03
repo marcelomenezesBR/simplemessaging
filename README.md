@@ -30,6 +30,16 @@ Read message
 
 $ curl -X GET http://localhost:8080/message
 
+## Config files (src/main/resources/config.properties)
+```
+bootstrap.servers=localhost:9092
+topicName=topicApp
+databaseServer=localhost:3306
+databaseSchema=simple_message
+databaseUser=user
+databasePassword=password
+databaseDriver=com.mysql.jdbc.Driver
+```
 ## Sample file (msg.json)
 ```
 {
