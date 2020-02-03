@@ -2,11 +2,11 @@
 Simple messaging application, REST API (Spring Boot) to send and receive a message through Kafka, storing anonymous messages in MySQL
 
 ## Requirements
-*A Kafka cluster and a topic exclusive to the application
-*A MySQL server with the following table created:
+* Kafka cluster and a topic exclusive to the application
+* MySQL server with the following table created:
 ```create table messages(id int unsigned auto_increment not null,message varchar(32000) not null,date_created timestamp default now(), primary key (id));```
-*JRE 1.8
-*Apache Maven
+* JRE 1.8
+* Apache Maven to build
 
 ## Install and execution
 1. Clone the repository
