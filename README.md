@@ -12,13 +12,14 @@ Simple messaging application, REST API (Spring Boot) to send and receive a messa
 ## Install and execution
 1. Clone the repository
 2. In the simplemessage folder run maven to build and package:
-    $ mvm clean package spring-boot:repackage
+
+    ```$ mvm clean package spring-boot:repackage```
 3. Update file src/main/resources/config.properties with the following information:
     * Kafka server and topic
     * MySQL host, database, user and password
 4. Start application
 
-    $ java -jar target\simplemessaging-0.0.1-SNAPSHOT.jar
+    ```$ java -jar target\simplemessaging-0.0.1-SNAPSHOT.jar```
 
 ## Test
 Send message (in a msg.json file)
@@ -29,7 +30,7 @@ Read message
 
 $ curl -X GET http://localhost:8080/message
 
-## Sample file
+## Sample file (msg.json)
 ```
 {
     "business_id": "1SWheh84yJXfytovILXOAQ",
