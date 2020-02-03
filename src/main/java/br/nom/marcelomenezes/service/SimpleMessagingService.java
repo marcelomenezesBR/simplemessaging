@@ -9,8 +9,18 @@ import br.nom.marcelomenezes.access.DatabaseDAO;
 import br.nom.marcelomenezes.access.KafkaDAO;
 import br.nom.marcelomenezes.model.Message;
 
+/**
+ * Service class to handle the business logic in 
+ * a decouped approach.
+ * 		- KafkaDAO class handles kafka comunicação
+ * 		- DatabaseDAO class handles database operations
+ * 		- Gson does the serialization (bj to json) 
+ * 		- Jackson does the deserialization (json to obj)
+ */
+
 public class SimpleMessagingService {
 
+	/** Send a message object to a kafka topic */
 	public static void sendMessage(Message message) {
 		try {
 			KafkaDAO dao = new KafkaDAO();
@@ -24,6 +34,10 @@ public class SimpleMessagingService {
 		}
 	}
 
+	/** consumes a message obj from a kafka topic.
+	 * strips sensitive information and stores 
+	 * new message in daabase
+	 */
 	public static String readMessage() {
 		KafkaDAO dao = new KafkaDAO();
 		DatabaseDAO dbdao =  new DatabaseDAO();

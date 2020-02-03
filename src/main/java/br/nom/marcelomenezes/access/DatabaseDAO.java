@@ -6,10 +6,19 @@ import java.sql.Statement;
 import java.util.Properties;
 
 import br.nom.marcelomenezes.core.ConfigurationHelper;
-import br.nom.marcelomenezes.model.Message;
 
+/**
+ * Data Access class to MySQL.
+ * Connection information is stored in properties file.
+ * It is accessed by helper ConfigurationHelper.
+ */
 public class DatabaseDAO {
 	
+
+	/**
+	 * Method to insert a message into database
+	 * @param message - json string of message
+	 */
 	public void insertMessage(String message) {
 	    try
 	    {

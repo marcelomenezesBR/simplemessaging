@@ -5,6 +5,15 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.gson.annotations.SerializedName;
 
+/**
+ * Model class of Hours
+ * Annotation used to expose different fields names
+ * 		- JsonCreator - for Jackson deserialization
+ * 		- SerializedName - for Gson serialization
+ * 		- JsonProperty - to relate different fields names
+ *		- JsonAutoDetect - detect public fields 
+ */
+
 @JsonAutoDetect
 public class Hours  {
 	@SerializedName("Tuesday") 
@@ -18,6 +27,14 @@ public class Hours  {
 	@SerializedName("Saturday")
 	private String saturday;
 	
+	/**
+	 * Constructor for deserializaztion
+	 * @param tuesday
+	 * @param wednesday
+	 * @param thursday
+	 * @param friday
+	 * @param saturday
+	 */
 	@JsonCreator
 	public Hours(@JsonProperty("Tuesday") String tuesday,@JsonProperty("Wednesday")String wednesday,@JsonProperty("Thursday")String thursday,
 			@JsonProperty("Friday")String friday,@JsonProperty("Saturday")String saturday) {

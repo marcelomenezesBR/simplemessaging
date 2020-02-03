@@ -11,6 +11,18 @@ import br.nom.marcelomenezes.model.Message;
 import br.nom.marcelomenezes.model.Reply;
 import br.nom.marcelomenezes.service.SimpleMessagingService;
 
+/**
+ * Controller to exposes the following API:
+ * 		GET /healthcheck - is server up?
+ *		GET /message - receive any anonymous message in topic
+ *		PUT /message - sends a message to topic
+ *
+ * - counter variable stores interactions only for log proporses
+ * - class SimpleMessagingService handles the business logic to
+ * send message and read message
+ * 
+ */
+
 @RestController
 public class SimpleMessagingController {
 
@@ -19,11 +31,6 @@ public class SimpleMessagingController {
 	@GetMapping("/healthcheck")
 	public Reply healthcheck() {
 		return new Reply();
-	}
-	
-	@GetMapping("/heartbeat")
-	public Reply heartbeat(){
-		return new Reply(-1,counter.toString());
 	}
 	
 	@PutMapping("/message")

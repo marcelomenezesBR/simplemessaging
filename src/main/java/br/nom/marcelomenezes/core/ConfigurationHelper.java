@@ -4,6 +4,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+/**
+ * Class to handle configuration files for all components
+ * config.properties file must be in resources folder
+ */
 public class ConfigurationHelper {
 
 	private static Properties properties;

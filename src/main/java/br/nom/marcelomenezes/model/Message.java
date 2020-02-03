@@ -5,6 +5,13 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 
+/**
+ * Model class of a Message
+ * Annotation used to expose different fields names
+ * 		- JsonSetter - for Jackson deserialization
+ * 		- SerializedName - for Gson serialization
+ * 		- JsonProperty - to relate different fields names
+ */
 public class Message  {
 
 	@JsonSetter("business_id")
@@ -32,7 +39,9 @@ public class Message  {
 	@JsonProperty("hours")
 	private Hours hours;
 
-
+	/**
+	 * Overriding toString to show json string
+	 */
 	@Override
 	public String toString() {
 		Gson gson = new Gson();
@@ -40,6 +49,7 @@ public class Message  {
 		return jsonInString;    	
 	}
 
+	//Getters and setters
 
 	public String getBusinessId() {
 		return businessId;
